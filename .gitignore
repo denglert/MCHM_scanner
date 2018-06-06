@@ -1,0 +1,4 @@
+*.pyc
+data/
+mg5_processes/
+*.dat

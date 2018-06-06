@@ -1,0 +1,78 @@
+########################
+### --- Vertices --- ###
+########################
+
+# - g_{hZZ}
+V_13 = Vertex(name = 'V_13',
+              particles = [ P.Z, P.Z, P.H ],
+              color = [ '1' ],
+              lorentz = [ L.VVS1 ],
+              couplings = {(0,0):C.GC_32})
+
+# - g_{htt}
+V_56 = Vertex(name = 'V_56',
+              particles = [ P.t__tilde__, P.t, P.H ],
+              color = [ 'Identity(1,2)' ],
+              lorentz = [ L.FFS1 ],
+              couplings = {(0,0):C.GC_37})
+
+# - g_{Ztt}
+V_68 = Vertex(name = 'V_68',
+              particles = [ P.t__tilde__, P.t, P.Z ],
+              color = [ 'Identity(1,2)' ],
+              lorentz = [ L.FFV2, L.FFV5 ],
+              couplings = {(0,0):C.GC_22,(0,1):C.GC_23})
+
+
+# - Vertices:
+	 - V_13
+	 - V_56
+	 - V_68
+
+# - Lorentz structures:
+	 - VVS1
+	 - FFS1
+	 - FFV2
+	 - FFV5
+
+# - Couplings
+	 - GC_32
+	 - GC_37
+	 - GC_23
+
+#########################
+### --- Couplings --- ###
+#########################
+
+GC_32 = Coupling(name = 'GC_32',
+                 value = 'ee**2*complex(0,1)*v + (cw**2*ee**2*complex(0,1)*v)/(2.*sw**2) + (ee**2*complex(0,1)*sw**2*v)/(2.*cw**2)',
+                 order = {'QED':1,'HZZ':1})
+
+GC_37 = Coupling(name = 'GC_37',
+                 value = '-((complex(0,1)*yt)/cmath.sqrt(2))',
+                 order = {'QED':1})
+
+GC_23 = Coupling(name = 'GC_23',
+                 value = '-(ee*complex(0,1)*sw)/(6.*cw)',
+                 order = {'QED':1})
+
+#################################
+### --- Lorentz structure --- ###
+#################################
+
+VVS1 = Lorentz(name = 'VVS1',
+               spins = [ 3, 3, 1 ],
+               structure = 'Metric(1,2)')
+
+FFS1 = Lorentz(name = 'FFS1',
+               spins = [ 2, 2, 1 ],
+               structure = 'Identity(2,1)')
+
+FFV2 = Lorentz(name = 'FFV2',
+               spins = [ 2, 2, 3 ],
+               structure = 'Gamma(3,2,-1)*ProjM(-1,1)')
+
+FFV5 = Lorentz(name = 'FFV5',
+               spins = [ 2, 2, 3 ],
+               structure = 'Gamma(3,2,-1)*ProjM(-1,1) + 4*Gamma(3,2,-1)*ProjP(-1,1)')
+
