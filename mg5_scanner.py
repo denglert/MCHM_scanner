@@ -12,10 +12,13 @@ from utils import *
 shat_list = linspace(500, 10000, 2)
 f_list    = linspace(750.0, 2000.0, 2)
 
-prog = './mg5_driver.py'
-
 tag  = sys.argv[1]
 comp = sys.argv[2]
+
+
+
+prog = './mg5_driver.py'
+
 
 #################################################################
 

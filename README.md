@@ -34,8 +34,24 @@ The UFO model can be found in `./mg5_model/loop_chm/`.
     ./create_mg5_process.py
     ~~~~
 
-2. 
+2. Edit `mg5_scanner.py`
 
+You need to specify:
+- The scan grid inside `mg5_scanner`.
+- run tag as the first argument
+- component as the second argument
+
+
+Example:
+
+~~~~
+./mg5_scanner.py test tri
+~~~~
+
+
+### Job submission
+
+Some examples for job submission scripts can be found in `./queue_job/` dir.
 
 
 ## Troubleshooting
