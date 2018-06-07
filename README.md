@@ -23,6 +23,7 @@ module load gcc/6.1.0
 ## UFO model
 
 The UFO model can be found in `./mg5_model/loop_chm/`.
+
 **Note:**
 Only &kappa;_hZZ and &kappa;_htt coupling modifiers are implemented currently.
 
